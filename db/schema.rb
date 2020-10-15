@@ -175,7 +175,6 @@ ActiveRecord::Schema.define(version: 2020_05_10_110808) do
     t.integer "avatar_storage_schema_version"
     t.integer "header_storage_schema_version"
     t.index "(((setweight(to_tsvector('simple'::regconfig, (display_name)::text), 'A'::\"char\") || setweight(to_tsvector('simple'::regconfig, (username)::text), 'B'::\"char\")) || setweight(to_tsvector('simple'::regconfig, (COALESCE(domain, ''::character varying))::text), 'C'::\"char\")))", name: "search_index", using: :gin
-    t.index "lower((username)::text), lower((domain)::text)", name: "index_accounts_on_username_and_domain_lower", unique: true
     t.index ["moved_to_account_id"], name: "index_accounts_on_moved_to_account_id"
     t.index ["uri"], name: "index_accounts_on_uri"
     t.index ["url"], name: "index_accounts_on_url"
@@ -302,7 +301,6 @@ ActiveRecord::Schema.define(version: 2020_05_10_110808) do
     t.boolean "visible_in_picker", default: true, null: false
     t.bigint "category_id"
     t.integer "image_storage_schema_version"
-    t.index ["shortcode", "domain"], name: "index_custom_emojis_on_shortcode_and_domain", unique: true
   end
 
   create_table "custom_filters", force: :cascade do |t|
@@ -311,9 +309,9 @@ ActiveRecord::Schema.define(version: 2020_05_10_110808) do
     t.text "phrase", default: "", null: false
     t.string "context", default: [], null: false, array: true
     t.boolean "irreversible", default: false, null: false
+    t.boolean "whole_word", default: true, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "whole_word", default: true, null: false
     t.index ["account_id"], name: "index_custom_filters_on_account_id"
   end
 
@@ -487,9 +485,9 @@ ActiveRecord::Schema.define(version: 2020_05_10_110808) do
   create_table "mutes", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "hide_notifications", default: true, null: false
     t.bigint "account_id", null: false
     t.bigint "target_account_id", null: false
+    t.boolean "hide_notifications", default: true, null: false
     t.index ["account_id", "target_account_id"], name: "index_mutes_on_account_id_and_target_account_id", unique: true
     t.index ["target_account_id"], name: "index_mutes_on_target_account_id"
   end
@@ -761,7 +759,6 @@ ActiveRecord::Schema.define(version: 2020_05_10_110808) do
     t.datetime "last_status_at"
     t.float "max_score"
     t.datetime "max_score_at"
-    t.index "lower((name)::text)", name: "index_tags_on_name_lower", unique: true
   end
 
   create_table "tombstones", force: :cascade do |t|
