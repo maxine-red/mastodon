@@ -66,6 +66,7 @@ const getUnitDelay = units => {
   }
 };
 
+const fallbackFormat = new Intl.DateTimeFormat('en', shortDateFormatOptions);
 export const timeAgoString = (intl, date, now, year, timeGiven = true) => {
   const delta = now - date.getTime();
 
