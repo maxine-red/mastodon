@@ -1,3 +1,5 @@
 default: styles/application.scss
 contrast: styles/contrast.scss
 mastodon-light: styles/mastodon-light.scss
+Moostodon: styles/moostodon.scss
+Pupper: styles/pupper.scss
