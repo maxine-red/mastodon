@@ -21,7 +21,7 @@ module Mastodon
     end
 
     def suffix
-      '+mootech3'
+      '+mootech4'
     end
 
     def to_a
