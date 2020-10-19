@@ -169,12 +169,12 @@ en:
         text: Why do you want to join?
       notification_emails:
         digest: Send digest e-mails
-        favourite: Someone kissd your status
+        favourite: Someone kissed your status
         follow: Someone followed you
         follow_request: Someone requested to follow you
         mention: Someone mentioned you
         pending_account: New account needs review
-        reblog: Someone baped your status
+        reblog: Someone bapped your status
         report: New report is submitted
         trending_tag: An unreviewed hashtag is trending
       tag:

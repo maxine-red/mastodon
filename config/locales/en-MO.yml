@@ -46,7 +46,7 @@ en:
     user_count_after:
       one: pupper
       other: puppers
-    user_count_before: Home to
+    user_count_before: Pillow to
     what_is_mastodon: What is Mastodon?
   accounts:
     choices_html: "%{name}'s choices:"
@@ -640,7 +640,7 @@ en:
     remove: Unlink alias
   appearance:
     advanced_web_interface: Advanced web interface
-    advanced_web_interface_hint: 'If you want to make use of your entire screen width, the advanced web interface allows you to configure many different columns to see as much information at the same time as you want: Home, notifications, federated timeline, any number of lists and hashtags.'
+    advanced_web_interface_hint: 'If you want to make use of your entire screen width, the advanced web interface allows you to configure many different columns to see as much information at the same time as you want: Pillow, notifications, federated timeline, any number of lists and hashtags.'
     animations_and_accessibility: Animations and accessibility
     confirmation_dialogs: Confirmation dialogs
     discovery: Discovery
@@ -801,8 +801,8 @@ en:
   filters:
     contexts:
       account: Profiles
-      home: Home timeline
-      notifications: Notifications
+      home: Pillow timeline
+      notifications: Mootifications
       public: Public timelines
       thread: Conversations
     edit:
@@ -944,8 +944,8 @@ en:
         other: "%{count} new notifications since your last visit \U0001F418"
       title: In your absence...
     favourite:
-      body: 'Your status was kissd by %{name}:'
-      subject: "%{name} kissd your status"
+      body: 'Your status was kissed by %{name}:'
+      subject: "%{name} kissed your status"
       title: New kiss
     follow:
       body: "%{name} is now following you!"
@@ -962,8 +962,8 @@ en:
       subject: You were mentioned by %{name}
       title: New mention
     reblog:
-      body: 'Your status was baped by %{name}:'
-      subject: "%{name} baped your status"
+      body: 'Your status was bapped by %{name}:'
+      subject: "%{name} bapped your status"
       title: New bap
   notifications:
     email_events: Events for e-mail notifications
@@ -1099,7 +1099,7 @@ en:
     import: Import
     import_and_export: Import and export
     migrate: Account migration
-    notifications: Notifications
+    notifications: Mootifications
     preferences: Preferences
     profile: Profile
     relationships: Follows and followers
